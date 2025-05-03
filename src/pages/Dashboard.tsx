@@ -1,9 +1,8 @@
-
 import React, { useState } from 'react';
 import StatCard from '@/components/dashboard/StatCard';
 import StatusChart from '@/components/dashboard/StatusChart';
 import ProgressBar from '@/components/dashboard/ProgressBar';
-import ApplicationsTable from '@/components/applications/ApplicationsTable';
+import ApplicationsTable, { Application } from '@/components/applications/ApplicationsTable';
 import UpcomingEvents from '@/components/calendar/UpcomingEvents';
 import { FileUp, Calendar, CheckCircle, Clock } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
@@ -12,7 +11,7 @@ const Dashboard = () => {
   const { toast } = useToast();
   
   // Sample data for the dashboard
-  const [applications, setApplications] = useState([
+  const [applications, setApplications] = useState<Application[]>([
     {
       id: '1',
       companyName: 'Google',

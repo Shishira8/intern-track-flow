@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import ApplicationsTable from '@/components/applications/ApplicationsTable';
+import ApplicationsTable, { Application } from '@/components/applications/ApplicationsTable';
 import { useToast } from "@/hooks/use-toast";
 import { Button } from '@/components/ui/button';
 import { Search } from 'lucide-react';
@@ -9,7 +9,7 @@ import { Input } from '@/components/ui/input';
 const Applications = () => {
   const { toast } = useToast();
   
-  const [applications, setApplications] = useState([
+  const [applications, setApplications] = useState<Application[]>([
     {
       id: '1',
       companyName: 'Google',
